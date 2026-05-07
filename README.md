@@ -14,11 +14,15 @@ bun install
 
 ```ts
 import {
+  createDefaultWireGuardCoreDraft,
   createWireGuardCorePayload,
   createWireGuardCoreConfig,
+  createWireGuardCoreConfigFromDraft,
   generateWireGuardCoreConfigJson,
   generateWireGuardKeyPair,
+  getWireGuardCoreFormCapabilities,
   getWireGuardPublicKey,
+  validateWireGuardCoreDraft,
   validateWireGuardCoreConfig
 } from "wireguard-config-kit";
 
@@ -55,6 +59,22 @@ Default generated config:
 ```
 
 `public_key` is intentionally omitted from the persisted config. It can be derived from `private_key`; use `getWireGuardPublicKey()` when the UI needs to display it.
+
+## Form Flow
+
+Use the form helpers when a UI owns editable drafts and needs field metadata before compiling to core JSON:
+
+```ts
+const capabilities = getWireGuardCoreFormCapabilities();
+const draft = createDefaultWireGuardCoreDraft();
+const issues = validateWireGuardCoreDraft(draft);
+
+if (issues.length === 0) {
+  const config = createWireGuardCoreConfigFromDraft(draft);
+}
+```
+
+The form draft includes a read-only `publicKey` field for display. It is never written into the generated core config.
 
 ## Validation
 
