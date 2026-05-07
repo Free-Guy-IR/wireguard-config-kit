@@ -1,6 +1,6 @@
 # WireGuard Config Kit
 
-`wireguard-config-kit` is a small TypeScript package for generating and validating WireGuard core configuration JSON.
+`@pasarguard/wireguard-config-kit` is a small TypeScript package for generating and validating WireGuard core configuration JSON.
 
 It targets a minimal WireGuard backend core config shape, not Xray's WireGuard inbound schema.
 
@@ -24,7 +24,7 @@ import {
   getWireGuardPublicKey,
   validateWireGuardCoreDraft,
   validateWireGuardCoreConfig
-} from "wireguard-config-kit";
+} from "@pasarguard/wireguard-config-kit";
 
 const keyPair = generateWireGuardKeyPair();
 

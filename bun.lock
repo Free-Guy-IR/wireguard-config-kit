@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "wireguard-config-kit",
+      "name": "@pasarguard/wireguard-config-kit",
       "dependencies": {
         "@stablelib/x25519": "^2.0.1",
         "zod": "^3.25.76",

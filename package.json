@@ -1,5 +1,5 @@
 {
-  "name": "wireguard-config-kit",
+  "name": "@pasarguard/wireguard-config-kit",
   "version": "0.1.0",
   "description": "Browser-safe TypeScript helpers for generating and validating WireGuard core configuration JSON.",
   "type": "module",
